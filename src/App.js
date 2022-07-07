@@ -25,43 +25,46 @@ function App() {
 
 //https://dev.to/nicm42/react-refs-in-a-loop-1jk4
 
-
+  var xs = 120;
+  var ys = 40;
 
   const x1 = [
 
                 {
-                  "x":65,
-                  "y": 130,
-                  "txt" : "Acheivements"
+                  "x": xs + 65,
+                  "y": ys + 130,
+                  "txt" : "Acheivements",
+                  "head" : "This is test ",
+                  "desc" : "We are the best"
                 },
                 {
-                  "x":125,
-                  "y": 50,
+                  "x": xs +125,
+                  "y": ys +  50,
                   "txt" : "experience"
                 },
                 {
-                  "x":179,
-                  "y": 130,
+                  "x": xs + 179,
+                  "y": ys + 130,
                   "txt" : "me"
                 },
                 {
-                  "x":233,
-                  "y": 50,
+                  "x": xs + 233,
+                  "y": ys + 50,
                   "txt" : "interests"
                 },
                 {
-                  "x":287,
-                  "y": 130,
+                  "x": xs + 287,
+                  "y": ys + 130,
                   "txt" : "projects"
                 },
                 {
-                  "x":125,
-                  "y": 210,
+                  "x": xs + 125,
+                  "y": ys + 210,
                   "txt" : "$ expectation"
                 },
                 {
-                  "x":233,
-                  "y": 210,
+                  "x": xs + 233,
+                  "y": ys + 210,
                   "txt" : "Certs"
                 }
 ]
@@ -79,7 +82,7 @@ function App() {
           }
     else {
             document.getElementById("polu"+i).className.baseVal = "cont2";
-            document.getElementById("golu"+i).className.baseVal = "cont2";
+            document.getElementById("golu"+i).className.baseVal = "cont3";
             document.getElementById("bolu"+i).className.baseVal = "cont2";
 
           }
@@ -94,7 +97,7 @@ function App() {
                 }
       else {
               document.getElementById("polu"+i).className.baseVal = "cont";
-              document.getElementById("golu"+i).className.baseVal = "cont";
+              document.getElementById("golu"+i).className.baseVal = "cont4";
               document.getElementById("bolu"+i).className.baseVal = "cont";
             }
       };
@@ -121,7 +124,7 @@ function App() {
             })
 
           document.getElementById("polu"+i).className.baseVal = "cont2";
-          document.getElementById("golu"+i).className.baseVal = "cont2";
+          document.getElementById("golu"+i).className.baseVal = "cont3";
           document.getElementById("bolu"+i).className.baseVal = "cont2";
 
           };
@@ -130,6 +133,17 @@ function App() {
 
   return (
 	     <svg  id="mainsvg" width={wid} height={hgt} xmlns="<http://www.w3.org/2000/svg>"	>
+
+       <rect x="560"
+             y="30"
+             rx="10"
+             ry="10"
+             width="300"
+             height="500"
+             stroke="grey"
+             fill="#fff"
+             stroke-width="1"
+         />
 
 
         { x1.map((crd, i) => (
@@ -175,8 +189,33 @@ function App() {
                 >
                           {crd.txt}
                 </text>
+
+
+
+                <text
+
+                      id={`rolu${i}`}
+                      x="580" y="55"
+                      textAnchor="left"
+                      fontSize="12"
+                >
+                          {crd.head}
+
+                </text>
+
+                <text
+
+                      id={`solu${i}`}
+                      x="580" y="95"
+                      textAnchor="left"
+
+                >
+
+                          {crd.desc}
+                </text>
               </>
   ))}
+
 
 	</svg>
 

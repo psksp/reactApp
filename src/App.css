@@ -48,10 +48,30 @@ cursor:pointer;
 
 
 }
+.cont3 {
+
+stroke-dasharray: 150;
+stroke-dashoffset: 50;
+animation: load 2s ;
+transform-origin: center;
+animation-fill-mode: forwards;
+cursor:pointer;
+
+
+}
 
 .cont {
   -webkit-filter: drop-shadow( 6px 0 2px hsla(0, 0%, 0%, 0.2));
         filter: drop-shadow( 6px 0 2px hsla(0, 0%, 0%, 0.2));
+
+        animation: load1 2s ;
+
+        transform-origin: center;
+        animation-fill-mode: forwards;
+
+}
+.cont4 {
+
 
         animation: load1 2s ;
 
@@ -120,4 +140,10 @@ cursor:pointer;
 -moz-transition: opacity .55s ease-in-out;
 -webkit-transition: opacity .55s ease-in-out;
 cursor:pointer;
+}
+
+#rolu0 {
+
+  font: bold 10px sans-serif;
+  fill: tomato;
 }
