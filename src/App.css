@@ -147,3 +147,9 @@ cursor:pointer;
   font: bold 10px sans-serif;
   fill: tomato;
 }
+
+.sfill {
+
+  min-height: 400px;
+  background-color: #ffeeff;
+}

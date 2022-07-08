@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
+import $ from 'jquery'
 
 function App() {
   // return (
@@ -21,11 +22,13 @@ function App() {
   //     </header>
   //   </div>
   // );
-  const [style, setStyle] = useState("contbase");
+  const [style] = useState("contbase");
 
 //https://dev.to/nicm42/react-refs-in-a-loop-1jk4
 
-  var xs = 120;
+
+
+  var xs = 30;
   var ys = 40;
 
   const x1 = [
@@ -127,33 +130,29 @@ function App() {
           document.getElementById("golu"+i).className.baseVal = "cont3";
           document.getElementById("bolu"+i).className.baseVal = "cont2";
 
+          setTimeout(function (){
+
+              document.getElementById("text"+i).scrollIntoView({behavior: "smooth"})
+
+                }, 500)
+
+      ;
+
           };
 
 
 
   return (
+    <div>
 	     <svg  id="mainsvg" width={wid} height={hgt} xmlns="<http://www.w3.org/2000/svg>"	>
 
-       <rect x="560"
-             y="30"
-             rx="10"
-             ry="10"
-             width="300"
-             height="500"
-             stroke="grey"
-             fill="#fff"
-             stroke-width="1"
-         />
+
 
 
         { x1.map((crd, i) => (
 
             <>
-//     <defs>
-//     <pattern id="pattern1" height="100%" width="100%" patternContentUnits="objectBoundingBox">
-//         <image height="1" width="1" preserveAspectRatio="none" xlinkHref="https://cdn.pixabay.com/photo/2017/11/04/21/09/textile-2918844_960_720.jpg" />
-//     </pattern>
-// </defs>
+
 
               {/* fill="url(#pattern1)" /> */}
 
@@ -192,33 +191,22 @@ function App() {
 
 
 
-                <text
 
-                      id={`rolu${i}`}
-                      x="580" y="55"
-                      textAnchor="left"
-                      fontSize="12"
-                >
-                          {crd.head}
-
-                </text>
-
-                <text
-
-                      id={`solu${i}`}
-                      x="580" y="95"
-                      textAnchor="left"
-
-                >
-
-                          {crd.desc}
-                </text>
               </>
   ))}
 
 
 	</svg>
 
+    <div class="sfill" id="text1">
+
+
+    </div>
+    <div class="sfill" id="text2">
+
+
+    </div>
+</div>
 );
 
 
